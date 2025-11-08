@@ -1,0 +1,152 @@
+:root {
+    --dark-bg-color: rgb(42, 49, 52);
+    --dark-text-color: rgb(227, 239, 237);
+    --light-bg-color: rgb(232, 222, 203);
+    --light-text-color: rgb(83, 40, 4);
+    --bg-color: var(--dark-bg-color);
+    --text-color: var(--dark-text-color);
+    --debug-border-size: 0px;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: var(--bg-color);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+p,h1 {
+    color: var(--text-color);
+}
+
+div#header {
+    margin: 0;
+    --padding-top: 0px;
+    padding: var(--padding-top) 0 var(--padding-top) 15px;
+    box-shadow: 0 0px 7px 0px var(--text-color);
+    background-color: var(--bg-color);
+    border-bottom: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 10px;
+    --height: 80px;
+    height: var(--height);
+
+    #title {
+        padding: 0px 10px;
+        white-space: nowrap;
+        font-weight: 100;
+        color: var(--text-color);
+    }
+
+    div.filler {
+        width: 100%;
+        height: 100%;
+        
+    }
+
+    div#header-buttons {
+        
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        border: var(--debug-border-size) var(--text-color) dotted;
+        
+
+
+        .header-button {
+            display: flex;
+            flex-direction: column;
+            z-index: 1;
+            background-color: var(--bg-color);
+            
+            height: 100%;
+            --font-size: 15px;
+            font-size: var(--font-size);
+            border: var(--debug-border-size) var(--text-color) dotted;
+           
+            width: 120px;
+            padding: 0px 10px;
+            color: var(--text-color);
+            text-decoration: none;
+            text-align: center;
+            justify-content: center;
+
+            &:hover {
+                font-size: calc(var(--font-size) * 1.2);
+                transition: font-size 0.2s ease-out;
+                text-shadow: 0 0px 3px var(--text-color);
+            }
+            transition: font-size 0.2s ease-in;
+        }
+        
+        button.header-button {
+            margin: 0;
+            --bg-size: 50px;
+            background-image: url("./images/dark-light-theme-icon.png");
+            background-size: var(--bg-size);
+            background-repeat: no-repeat;
+            background-position: center;
+
+            &:hover {
+                background-size: calc(var(--bg-size) * 1.2);
+
+                transition: background-size .2s ease-out;
+            }
+        }
+
+    }
+
+    
+}
+
+div#contact-bar {
+    z-index: 0;
+    position: absolute;
+    height: 200px;
+
+    top: -10px;
+    right: 0;
+    width: 400px;
+    background-color: var(--bg-color);
+    border: var(--debug-border-size) var(--text-color) dotted;
+    border: 1px solid black;
+    box-shadow: 0px 0px 4px 0px var(--text-color);
+    border-radius: 0 0 0 8px;
+    color: var(--text-color);
+    transition: top 0.2s ease-out;
+}
+div#contact-bar.hover {
+    transition: top .2s ease-out;
+}
+
+div#body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: center;
+    height: 100%;
+    padding: 0 250px;
+}
+
+div#about-me {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: center;
+    .title {
+        text-align: center;
+    }
+    p {
+        text-align: center;
+    }
+}
