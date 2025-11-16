@@ -8,30 +8,68 @@
         <script defer src="script.js"></script>
     </head>
     <body>
-        <div id="header">
-            <h1 id="title">Nahum Auguste</h1>
+        <div id="header-bar">
+            <p id="title">Nahum Auguste</p>
             <div class="filler"></div>
-            <div id="header-buttons">  
-                <a href="#about-me" class="header-button">About Me</a>
-                <a href="#projects" class="header-button">Projects</a>
-                <a href="#skills" class="header-button">Skills</a>
-                <a href="#contact" class="header-button" id="contact-button">Contact</a> 
-                <button id="theme-button" class="header-button dark"></button>
+            <div id="header-buttons-container">
+                <a href="#" class="header-button">About Me</a>
+                <a href="#" class="header-button">Projects</a>
+                <a href="#" class="header-button">Skills</a>
+                <a href="#" id="contact-button" class="header-button">Contact</a>
             </div>
-            <div id="contact-bar"></div>
         </div>
-        <div id="body">
-            <div id="about-me">
-                <h1 class="title">Nahum Auguste</h1>
+        <div id="header-bar-shadow"></div>
+        <div id="contact-bar"></div>
+        <div id="main-section">
+            <section id="about-me">
+                <header>Nahum Auguste</header>
                 <p>
-                    I am Nahum Auguste (Nay-hum August), a Computer Science major attending the University of Central Florida who 
-                    loves design and web and software development. Before attending college, I received my Associate in Arts degree 
-                    at the Indian River State College and graduated from high school at Fort Pierce Westwood High in 2023. I have also 
-                    participated in my High School Robotics club and our HackUCF Cybersecurity club.  Below is a showcase of my skills 
-                    and accomplishments.
+                    I am Nahum Auguste (Nay-hum August), a Computer Science major attending the 
+                    University of Central Florida who loves design and web and software development.
+                    Before attending college, I received my Associate in Arts degree at the Indian 
+                    River State College and graduated from high school at Fort Pierce Westwood High 
+                    in 2023. I have also participated in my High School Robotics club and our HackUCF
+                    Cybersecurity club.  Below is a showcase of my skills and accomplishments.
                 </p>
-            </div>
+            </section>
+            <section id="projects">
+                <header>Projects</header>
+                <section id="minesweeper">
+                    <header>Minesweeper</header>
+                    <div class="medias-container">
+                        <div class="media-container">
+                            <caption>Minesweeper Figma Design</caption>
+                            <iframe class="video"
+                                loop
+                                src="https://www.youtube.com/embed/Y0pESe16fWo?autoplay=1&mute=1&loop=1&playlist=Y0pESe16fWo"
+                                title="YouTube video player"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen></iframe>
+                        </div>
+                        <div class="media-container">
+                            <caption>Minesweeper Entity Relation Diagram</caption>
+                            <img src="./images/ERD.png" alt="Minesweeper Entity Relationship Diagram">
+                        </div>
+                        <div class="media-container">
+                            <caption>Basic Android Studio Minesweeper App</caption>
+                            <video muted controls autoplay>
+                                <source src="./videos/clip of minesweeper.mp4">
+                            </video>
+                        </div>
+                    </div>
+                    <p>
+                        To the left is my Figma design showcase video which is also visible on my 
+                        YouTube channel. In the middle is an Entity Relationship Diagram to store 
+                        data for the Minesweeper app. To the right is a video showcasing a quick 
+                        minesweeper app I made in Android Studio for my Mobile Development class. 
+                        I plan to polish it a bit so I can publish it on the play store.
+                    </p>
+                </section>
+            </section>
         </div>
-        <footer></footer>
+        <footer id="footer">
+            <p>Footer</p>
+        </footer>
     </body>
 </html>

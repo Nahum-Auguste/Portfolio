@@ -1,53 +1,87 @@
 const root = document.documentElement;
+const main_section = document.getElementById("main-section");
+const header_bar = document.getElementById("header-bar");
+const header_buttons_container = document.getElementById("header-buttons-container");
+const contact_bar = document.getElementById("contact-bar");
+
 const theme_button = document.getElementById("theme-button");
 
 
-function main() {
-    change_theme();
+function init() {
+    handle_main_section();
     handle_header();
 }
-main();
+
+window.addEventListener("load", ()=>{
+    init();
+})
 
 
 function handle_header() {
-    const header = document.getElementById("header");
-    const contact_button = document.getElementById("contact-button");
-    const contact_bar = document.getElementById("contact-bar");
+
     
-    const height = header.offsetHeight - 2;
-    contact_bar.style.height = height + "px";
-    contact_bar.style.right = theme_button.offsetWidth + "px";
 
-    contact_button.addEventListener("mouseenter",(e)=>{
-        contact_bar.style.top = height + "px";
-        contact_bar.classList.add("hover");
-    });
+    //handle header buttons
+    handle_buttons = ()=>{
+        const container = header_buttons_container;
 
-    contact_bar.addEventListener("mousemove",(e)=>{
-        contact_bar.style.top = height + "px";
-        contact_bar.classList.add("hover");
-    });
+        /**@type {HTMLElement[]} */
+        const buttons = Array.from(container.children);
 
-    contact_button.addEventListener("mouseleave",(e)=>{
-        contact_bar.style.top = -15 + "px";
-        contact_bar.classList.remove("hover");
-    });
+        buttons.forEach((button)=>{
+            let width = button.offsetWidth;
 
-    contact_bar.addEventListener("mouseleave",(e)=>{
-        contact_bar.style.top = -15 + "px";
-        contact_bar.classList.remove("hover");
-    });
+            button.style.width = width + "px";
+         })
 
-    theme_button.addEventListener("mousedown",(e)=>{
-        theme_button.classList.toggle("light");
-        theme_button.classList.toggle("dark");
+    };
 
-        change_theme();
+    //handle contact bar
+    handle_contact_bar = ()=>{
+        contact_bar.style.width = header_buttons_container.offsetWidth + "px";
+
+        let right = window.innerWidth - header_buttons_container.getBoundingClientRect().right + .5;
+        contact_bar.style.right = right + "px";
+
+        const open = ()=>{
+            contact_bar.style.top = header_buttons_container.offsetHeight + "px";
+        }
+
+        const close = ()=>{
+            contact_bar.style.top = -4 + "px";
+        }
+
+        const contact_button = document.getElementById("contact-button");
+        contact_button.addEventListener("mouseenter",()=>{
+            open();
+        })
+
+        contact_button.addEventListener("mouseout",()=>{
+            close();
+        })
+
+        contact_bar.addEventListener("mouseenter",()=>{
+            open();
+        })
+
+        contact_bar.addEventListener("mouseout",()=>{
+            close();
+        })
         
-    });
-    
-    
+        
+    }
+
+
+    handle_buttons();
+    handle_contact_bar();
 }
+
+function handle_main_section() {
+
+    //set gap between header bar and rest of document
+    main_section.style.marginTop = header_bar.offsetHeight + 10 + "px";
+}
+
 
 function change_theme() {
     if (theme_button.classList.contains("light")) {
