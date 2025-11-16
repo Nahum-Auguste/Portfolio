@@ -2,7 +2,7 @@
     --dark-bg-color: black;
     --bg-color: var(--dark-bg-color);
     --debug-border-color: rgba(255, 255, 255, 0.461);
-    --debug-border-width: 1px;
+    --debug-border-width: 0px;
     --dark-text-color: white;
     --text-color: var(--dark-text-color);
     --dark-text-glow-color: rgb(154, 255, 240);
@@ -29,7 +29,7 @@ body {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-p,a,header{
+p,a,header,li{
     color: var(--text-color);
     width: fit-content;
     height: fit-content;
@@ -58,11 +58,11 @@ p,a,header{
 #header-bar,#header-bar-shadow {
     height: 50px;
     width: 100%;
-    position: absolute;
+    position: fixed;
 }
 
 #contact-bar {
-    position: absolute;
+    position: fixed;
     top: -4px;
     right: 0;
     height: 50px;
@@ -145,6 +145,10 @@ section {
         line-height: 23px;
     }
 
+    a {
+        margin-bottom: 10px;
+    }
+
     section {
         width: 100%;
 
@@ -161,7 +165,7 @@ section {
     align-items: flex-start;
     justify-content: center;
     gap:50px;
-    height: 400px;
+    height: 500px;
     margin-bottom: 15px;
 }
 
@@ -173,8 +177,13 @@ section {
     color: var(--text-color);
     height: 100%;
 
-    .video {
+    .portrait {
         aspect-ratio: 9/16;
+        height: 100%;
+    }
+
+    .video {
+        aspect-ratio: 16/9;
         height: 100%;
     }
 
@@ -183,10 +192,57 @@ section {
     }
 }
 
-#footer {
-    height: 25px;
+#education {
+    display: flex;
+    flex-direction: column;
+    
+    section {
+        margin-bottom: 30px;
+    }
 }
 
-body {
-    border: 1px solid white;
+#skills-container,#certs-container,#courses-container {
+    width: 800px;
+}
+
+#skills-list,#certs-list,#courses-list {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+
+}
+
+.skill-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+}
+
+#skills-list li,#certs-list li,#courses-list li{
+    --font-size: 1rem;
+    font-size: var(--font-size);
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: 1px var(--text-color) solid;
+    background-color: var(--bg-color);
+    
+    white-space: nowrap;
+
+    &:hover {
+        z-index: 1;
+        font-size: calc(var(--font-size) * 1.1);
+        font-weight: bold;
+
+        transition: font-size .2s ease-out;
+    }
+    transition: font-size .2s ease-out;
+}
+
+
+#footer {
+    height: 25px;
 }

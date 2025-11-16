@@ -10,12 +10,41 @@ const theme_button = document.getElementById("theme-button");
 function init() {
     handle_main_section();
     handle_header();
+    handle_skill_buttons();
 }
 
 window.addEventListener("load", ()=>{
     init();
 })
 
+function handle_skill_buttons() {
+    const skills_container = document.getElementById("skills-list");
+    const certs_container = document.getElementById("certs-list");
+    const courses_container = document.getElementById("courses-list");
+
+    const fix_buttons = (container)=>{
+        /**@type {HTMLElement[]} */
+        const skill_container = Array.from(container.children);
+
+        skill_container.forEach((sc)=>{
+            let width = sc.offsetWidth;
+            let height = sc.offsetHeight;
+
+            sc.style.width = width + "px";
+            sc.style.height = height + "px";
+
+            const text_container = sc.firstChild;
+            width = text_container.offsetWidth;
+            height = text_container.offsetHeight;
+        })
+    }
+
+    fix_buttons(skills_container);
+    fix_buttons(certs_container);
+    fix_buttons(courses_container);
+
+    
+}
 
 function handle_header() {
 
