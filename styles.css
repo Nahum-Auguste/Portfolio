@@ -200,6 +200,7 @@ p,a,header,li{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 section {
@@ -253,7 +254,7 @@ section#about-me {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    width: 70%;
+    width: fit-content;
     height: fit-content;
     margin-bottom: 60px;
     gap: 85px;
@@ -299,9 +300,12 @@ section#about-me {
     }
 }
 
+#minesweeper {
+    width: 100%;
+}
 
 .medias-container {
-    width: fit-content;
+    width: 100%;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -316,6 +320,7 @@ section#about-me {
     display: flex;
     flex-direction: column;
     align-items: center;
+    white-space: nowrap;
     gap: 10px;
     color: var(--text-color);
     font-size: 1.25rem;
