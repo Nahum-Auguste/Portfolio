@@ -5,7 +5,7 @@
     --dark-skill-bg-color: rgb(9, 19, 39);
 
     --light-bg-color: rgb(255, 239, 235);
-    --light-text-color: rgb(114, 6, 6);
+    --light-text-color: rgb(114, 69, 6);
     --light-text-glow-color: rgb(255, 125, 140);
     --light-skill-bg-color: rgb(255, 219, 233);
 
@@ -206,7 +206,7 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
+    width: 70%;
     height: fit-content;
     margin-bottom: 60px;
 
@@ -219,7 +219,9 @@ section {
     p {
         width: 70%;
         text-align: center;
-        line-height: 23px;
+        line-height: 25px;
+        font-size: 1.3rem;
+        margin: 25px 0;
     }
 
     a {
@@ -237,7 +239,7 @@ section {
     }
 
     section {
-        width: 100%;
+        width: fit-content;
         margin-bottom: 30px;
 
         header {
@@ -247,8 +249,59 @@ section {
     }
 }
 
+section#about-me {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 70%;
+    height: fit-content;
+    margin-bottom: 60px;
+    gap: 85px;
+
+    figure {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+        
+        img {
+            border-radius: 5px;
+            box-shadow: 0 0 10px var(--text-color);
+        }
+    }
+
+    figcaption {
+        white-space: nowrap;
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        font-weight: bold;
+        text-shadow: 0 0 7px var(--text-glow-color);
+        color: var(--text-color);
+    }
+
+    a {
+        margin-top: 15px;
+    }
+
+    header {
+        margin-bottom: 10px;
+    }
+
+    p {
+        width: 700px;
+    }
+
+    div {
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
 .medias-container {
-    width: 100%;
+    width: fit-content;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -258,11 +311,12 @@ section {
     margin-bottom: 15px;
 }
 
+
 .media-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 5px;
+    gap: 10px;
     color: var(--text-color);
     font-size: 1.25rem;
     height: 100%;
