@@ -1,12 +1,20 @@
 :root {
-    --dark-bg-color: black;
+    --dark-bg-color: rgb(24, 26, 40);
+    --dark-text-color: rgb(247, 230, 255);
+    --dark-text-glow-color: rgb(213, 154, 255);
+    --dark-skill-bg-color: rgb(9, 19, 39);
+
+    --light-bg-color: rgb(255, 239, 235);
+    --light-text-color: rgb(114, 6, 6);
+    --light-text-glow-color: rgb(255, 125, 140);
+    --light-skill-bg-color: rgb(255, 219, 233);
+
     --bg-color: var(--dark-bg-color);
+    --text-color: var(--dark-text-color);
+    --text-glow-color:var(--dark-text-glow-color);
+    --skill-bg-color:var(--dark-skill-bg-color);
     --debug-border-color: rgba(255, 255, 255, 0.461);
     --debug-border-width: 0px;
-    --dark-text-color: white;
-    --text-color: var(--dark-text-color);
-    --dark-text-glow-color: rgb(154, 255, 240);
-    --text-glow-color:var(--dark-text-glow-color);
 }
 
 * {
@@ -14,6 +22,10 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 html, body {
@@ -50,13 +62,14 @@ p,a,header,li{
     align-items: center;
 
     .filler {
-        width: 100%;
-
+        flex: 1;
     }
 }
 
+
+
 #header-bar,#header-bar-shadow {
-    height: 50px;
+    height: 55px;
     width: 100%;
     position: fixed;
 }
@@ -66,11 +79,45 @@ p,a,header,li{
     top: -4px;
     right: 0;
     height: 50px;
+    width: fit-content;
     background-color: var(--bg-color);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    padding: 0 10px;
+    border-radius: 0 0 7px 7px;
+ 
 
+    a{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+        width: 50px;
+        img {
+            opacity: .7;
+            height: 33px;
+            transition: opacity .2s ease-out;
+            transition: height .2s ease-out;
+        }
+        img.github, img.mail {
+            background-color: aliceblue;
+            border-radius: 25px;
+            border: 1px var(--text-color) solid;
+        }
+        img:hover {
+            height: 40px;;
+            opacity: 1;
 
+            transition: opacity .2s ease-out;
+            transition: height .2s ease-out;
+        }
+    }
     
-    transition: top .25s ease-out;
+    transition: top .2s ease-out;
 }
 
 #header-bar-shadow,#contact-bar {
@@ -79,8 +126,13 @@ p,a,header,li{
 
 
 #title {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     white-space: nowrap;
+    text-decoration: none;
+
+    &:hover {
+        text-shadow: 0 0 3px var(--text-glow-color);
+    }
 }
 
 #header-buttons-container {
@@ -121,6 +173,28 @@ p,a,header,li{
     }
 }
 
+#theme-button {
+    background-image: url(./images/dark-light-theme-icon.png);
+    background-size: 40px;
+    background-color: rgba(255, 255, 255, 0);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    width:55px;
+    height: 100%;
+    rotate: 180deg;
+
+
+    
+
+    &:hover {
+        background-size: 45px;
+        transition: background-size .15s ease-out;
+        transition: rotate .15s ease-out;
+    }
+    transition: rotate .15s ease-out;
+    transition: background-size .15s ease-out;
+}
+
 #main-section {
     min-height: fit-content;
     display: flex;
@@ -134,10 +208,13 @@ section {
     align-items: center;
     width: 100%;
     height: fit-content;
+    margin-bottom: 60px;
 
     header{
-        font-size: 2rem;
-        margin-bottom: 20px;
+        font-size: 3rem;
+        margin-bottom: 30px;
+        font-weight: bold;
+        text-shadow: 0 0 7px var(--text-glow-color);
     }
     p {
         width: 70%;
@@ -147,13 +224,25 @@ section {
 
     a {
         margin-bottom: 10px;
+        font-size: 1.5rem;
+        text-decoration: none;
+        height: 30px;
+        text-shadow: 0 0 5px var(--text-glow-color);
+        border-bottom: 1px dotted var(--text-color);
+
+        &:hover {
+            text-shadow: 0 0 10px var(--text-glow-color);
+            border-bottom: 2px dotted var(--text-color);
+        }
     }
 
     section {
         width: 100%;
+        margin-bottom: 30px;
 
         header {
-            font-size: 1rem;
+            font-size: 2rem;
+            text-shadow: 0 0 0px var(--text-glow-color);
         }
     }
 }
@@ -175,7 +264,15 @@ section {
     align-items: center;
     gap: 5px;
     color: var(--text-color);
+    font-size: 1.25rem;
     height: 100%;
+
+    caption {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 
     .portrait {
         aspect-ratio: 9/16;
@@ -189,6 +286,11 @@ section {
 
     img, video {
         height: 100%;
+    }
+
+    img,video,.video, .portrait{
+        border-radius: 5px;
+        box-shadow: 0 0 5px var(--text-color);
     }
 }
 
@@ -228,14 +330,14 @@ section {
     padding: 10px 20px;
     border-radius: 25px;
     border: 1px var(--text-color) solid;
-    background-color: var(--bg-color);
+    background-color: var(--skill-bg-color);
     
     white-space: nowrap;
 
     &:hover {
         z-index: 1;
         font-size: calc(var(--font-size) * 1.1);
-        font-weight: bold;
+        box-shadow: 0 0 15px var(--text-glow-color), inset 0 0 7px var(--text-color);
 
         transition: font-size .2s ease-out;
     }
@@ -243,6 +345,64 @@ section {
 }
 
 
-#footer {
-    height: 25px;
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: fit-content;
+    gap: 10px;
+    padding: 0 0 10px 0;
+
+    #contact-buttons-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        height: 50px;
+        width: 300px;
+        gap: 20px;
+
+        a {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 50px;
+            width: 50px;
+
+            img {
+                height: 50px;
+                opacity: 50%;
+                transition: height .2s ease-out;
+            }
+            img.github, img.mail {
+                background-color: aliceblue;
+                border-radius: 25px;
+                border: 1px var(--text-color) solid;
+            }
+            img:hover {
+                z-index: 1;
+                height: 55px;
+                opacity: 100%;
+                transition: height .2s ease-out;
+            }
+            img.youtube {
+                height: 80%;
+
+                &:hover {
+                    height: 90%;
+                    transition: height .2s ease-out;
+                }
+            }
+            img.mail {
+                height: 50px;
+
+                &:hover {
+                    height: 55px;
+                    transition: height .2s ease-out;
+                }
+            }
+            
+            
+        }
+    }
 }

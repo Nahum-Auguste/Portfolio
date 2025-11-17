@@ -9,20 +9,27 @@
     </head>
     <body>
         <div id="header-bar">
-            <p id="title">Nahum Auguste</p>
+            <a href="#" id="title">Nahum Auguste</a>
             <div class="filler"></div>
             <div id="header-buttons-container">
                 <a href="#" class="header-button">About Me</a>
-                <a href="#" class="header-button">Projects</a>
-                <a href="#" class="header-button">Skills</a>
-                <a href="#" id="contact-button" class="header-button">Contact</a>
+                <a href="#projects" class="header-button">Projects</a>
+                <a href="#education" class="header-button">Education</a>
+                <a href="#contact" id="contact-button" class="header-button">Contact</a>
             </div>
+            <button id="theme-button" class="dark"></button>
         </div>
         <div id="header-bar-shadow"></div>
-        <div id="contact-bar"></div>
+        <div id="contact-bar">
+            <a target="_blank" href="https://www.linkedin.com/in/nahum-auguste-a23155375"><img alt="Linked In Button" src="./images/linkedin icon.png"></a>
+            <a target="_blank" href="https://github.com/Nahum-Auguste"><img alt="GitHub Button" class="github" src="./images/github icon.png"></a>
+            <a target="_blank" href="https://www.youtube.com/@Nahum-Auguste"><img alt="YouTube Button" class="youtube" src="./images/youtube icon.png"></a>
+            <a target="_blank" href="mailto:nahum.bruce.auguste@gmail.com" title="nahum.bruce.auguste@gmail.com"><img alt="Mail Button" class="mail" src="./images/mail icon.png"></a>
+        </div>
         <div id="main-section">
             <section id="about-me">
                 <header>Nahum Auguste</header>
+                <a href="./downloadable/Nahum_Auguste_Resume.pdf" target="_blank" download="">My Resume</a>
                 <p>
                     I am Nahum Auguste (Nay-hum August), a Computer Science major attending the 
                     University of Central Florida who loves design and web and software development.
@@ -31,6 +38,7 @@
                     in 2023. I have also participated in my High School Robotics club and our HackUCF
                     Cybersecurity club.  Below is a showcase of my skills and accomplishments.
                 </p>
+                
             </section>
             <section id="projects">
                 <header>My Projects</header>
@@ -74,7 +82,7 @@
                             <iframe class="video" src="https://www.youtube.com/embed/RUpliQpWB2g?si=KSoDJ9K7E6kRwWb6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                         </div>
                     </div>
-                    <a>Link</a>
+                    <a target="_blank" href="https://nahum-auguste.github.io/Boxbro-2D-Platformer/">Site Link</a>
                     <p>
                         This is a 2D platformer I’ve been working on in HTML, CSS, and JavaScript 
                         while tinkering around with the canvas element. I plan to add sprites, 
@@ -134,8 +142,16 @@
 
             </section>
         </div>
-        <footer id="footer">
-            <p>Footer</p>
+        <footer id="contact">
+            <p>Contact Me</p>
+            <address>
+                <div id="contact-buttons-container">
+                    <a target="_blank" href="https://www.linkedin.com/in/nahum-auguste-a23155375"><img alt="Linked In Button" src="./images/linkedin icon.png"></a>
+                    <a target="_blank" href="https://github.com/Nahum-Auguste"><img alt="GitHub Button" class="github" src="./images/github icon.png"></a>
+                    <a target="_blank" href="https://www.youtube.com/@Nahum-Auguste"><img class="youtube" alt="YouTube Button" src="./images/youtube icon.png"></a>
+                    <a target="_blank" href="mailto:nahum.bruce.auguste@gmail.com" title="nahum.bruce.auguste@gmail.com"><img alt="Mail Button" class="mail" src="./images/mail icon.png"></a>
+                </div>
+            </address>
         </footer>
     </body>
 </html>
